@@ -1,17 +1,41 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { PropsWithChildren } from 'react'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import {
+  createContext as createContextWithSelector,
+  useContextSelector,
+  useContext as useSpecialContext,
+  useContextUpdate as useSpecialContextUpdate,
+  useBridgeValue as useSpecialBridgeValue,
+} from 'use-context-selector'
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+type ProviderProps<Value> = PropsWithChildren<{
+  value: Value
+}>
+
+const createContext = <Value,>(initialValue: Value) => {
+  const Context = createContextWithSelector(initialValue)
+
+  const useSelector = <Selected,>(selector: (state: Value) => Selected) =>
+    useContextSelector(Context, selector)
+
+  const useContext = () => useSpecialContext(Context)
+
+  const useContextUpdate = () => useSpecialContextUpdate(Context)
+
+  const useBridgeValue = () => useSpecialBridgeValue(Context)
+
+  const Provider = ({ children, value }: ProviderProps<Value>) => (
+    <Context.Provider value={value}>{children}</Context.Provider>
+  )
+
+  return {
+    Context,
+    useSelector,
+    useContext,
+    useContextUpdate,
+    useBridgeValue,
+    Provider,
+  }
+}
+
+export { createContext }

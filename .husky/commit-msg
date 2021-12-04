@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Running commitlint..."
+yarn --silent commitlint --edit "$1"
