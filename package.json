@@ -21,6 +21,7 @@
   "scripts": {
     "husky:install": "husky install",
     "build": "rollup -c",
+    "pub": "yarn build && npm publish",
     "start": "rollup -c -w",
     "commit": "npx git-cz",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
