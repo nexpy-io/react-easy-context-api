@@ -233,4 +233,4 @@ This hook return a value for BridgeProvider
 
 ## Examples
 
-[See this example file](examples/cats.md).
+[See this example file](https://github.com/nexpy-io/react-easy-context-api/blob/main/examples/cats.md).
