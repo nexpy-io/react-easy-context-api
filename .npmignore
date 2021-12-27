@@ -4,6 +4,7 @@ src
 .husky
 .editorconfig
 .eslintrc.js
+.eslintignore
 .gitignore
 .lintstagedrc.json
 .nvmrc
