@@ -1,6 +1,5 @@
 import typescript from 'rollup-plugin-typescript2'
 import commonjs from '@rollup/plugin-commonjs'
-import resolve from '@rollup/plugin-node-resolve'
 import { uglify } from 'rollup-plugin-uglify'
 
 import packageSettings from './package.json'
@@ -16,6 +15,6 @@ export default {
       strict: true,
     },
   ],
-  plugins: [typescript(), commonjs(), resolve(), uglify()],
+  plugins: [typescript(), commonjs(), uglify()],
   external: ['react', 'react-dom', 'react/jsx-runtime'],
 }
