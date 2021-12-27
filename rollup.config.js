@@ -16,5 +16,5 @@ export default {
     },
   ],
   plugins: [typescript(), commonjs(), uglify()],
-  external: ['react', 'react-dom', 'react/jsx-runtime'],
+  external: ['react', 'react-dom', 'react/jsx-runtime', 'use-context-selector'],
 }

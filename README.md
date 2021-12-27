@@ -26,7 +26,7 @@ This package is constructed above the [use-context-selector](https://github.com/
 This package requires some peer dependencies, which you need to install by yourself.
 
 ```bash
-yarn add react-easy-context-api use-context-selector scheduler
+yarn add react-easy-context-api scheduler
 ```
 
 Notes for library authors:
