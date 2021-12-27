@@ -1,0 +1,15 @@
+node_modules
+
+src
+.husky
+.editorconfig
+.eslintrc.js
+.gitignore
+.lintstagedrc.json
+.nvmrc
+.prettierignore
+.prettierrc.json
+commitlint.config.js
+rollup.config.js
+tsconfig.json
+yarn.lock

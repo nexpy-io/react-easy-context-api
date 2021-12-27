@@ -6,14 +6,15 @@ import {
   useContext as useSpecialContext,
   useContextUpdate as useSpecialContextUpdate,
   useBridgeValue as useSpecialBridgeValue,
+  BridgeProvider,
 } from 'use-context-selector'
 
 type ProviderProps<Value> = PropsWithChildren<{
   value: Value
 }>
 
-const createContext = <Value,>(initialValue: Value) => {
-  const Context = createContextWithSelector(initialValue)
+const createContext = <Value,>(defaultValue: Value) => {
+  const Context = createContextWithSelector(defaultValue)
 
   const useSelector = <Selected,>(selector: (state: Value) => Selected) =>
     useContextSelector(Context, selector)
@@ -35,6 +36,7 @@ const createContext = <Value,>(initialValue: Value) => {
     useContextUpdate,
     useBridgeValue,
     Provider,
+    BridgeProvider,
   }
 }
 
