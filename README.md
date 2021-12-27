@@ -45,63 +45,58 @@ It also requires `useContextUpdate` to behave better in Concurrent Mode.
 
 ```tsx
 // cats-context.tsx
-import { useState } from 'react'
+import { useState, FC } from 'react'
 
 import { createContext } from 'react-easy-context-api'
 
 type MyContext = {
-    pettedCats: number
-    currentCats: number
+  pettedCats: number
+  currentCats: number
 }
 
 const { useSelector, Provider } = createContext<MyContext>({
-    pettedCats: 0
-    currentCats: 0
+  pettedCats: 0,
+  currentCats: 0,
 })
 
-const CatsProvider = ({ children }) => {
-    const [pettedCats, setPettedCats] = useState(0)
-    const [currentCats, setCurrentCats] = useState(0)
+const CatsProvider: FC = ({ children }) => {
+  const [pettedCats, setPettedCats] = useState(0)
+  const [currentCats, setCurrentCats] = useState(0)
 
-    // ... your context logic :)
+  // ... your context logic :)
 
-    return (
-        <Provider value={{
-            pettedCats,
-            currentCats
-        }}>
-            {children}
-        </Provider>
-    )
+  return (
+    <Provider
+      value={{
+        pettedCats,
+        currentCats,
+      }}
+    >
+      {children}
+    </Provider>
+  )
 }
 
-export {
-    CatsProvider,
-    useSelector
-}
+export { CatsProvider, useSelector }
 
 // ... in your components
 const CatsPetted = () => {
-    const catsPettedNumber = useSelector(state => state.pettedCats)
+  const catsPettedNumber = useSelector(state => state.pettedCats)
 
-    return (
-        <p>Petted cats: {catsPettedNumber}</p>
-    )
+  return <p>Petted cats: {catsPettedNumber}</p>
 }
 
 const CurrentCats = () => {
-    const currentCatsNumber = useSelector(state => state.currentCats)
+  const currentCatsNumber = useSelector(state => state.currentCats)
 
-    return (
-        <p>Current cats: {currentCatsNumber}</p>
-    )
+  return <p>Current cats: {currentCatsNumber}</p>
 }
 
 const App = () => (
-    <CatsProvider>
-        <CatsPetted />
-        <CurrentCats />
-    </CatsProvider>
+  <CatsProvider>
+    <CatsPetted />
+    <CurrentCats />
+  </CatsProvider>
 )
 ```
 
@@ -238,4 +233,4 @@ This hook return a value for BridgeProvider
 
 ## Examples
 
-Usage examples are being built.
+[See this example file](examples/cats.md).
