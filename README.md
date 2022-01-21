@@ -163,7 +163,7 @@ const MyComponent = () => {
 
 #### useContextUpdate
 
-This hook returns an update function that accepts a thunk function
+This hook returns an update function that accepts a thunk function.
 
 Use this for a function that will change a value in
 [Concurrent Mode](https://reactjs.org/docs/concurrent-mode-intro.html).
@@ -182,7 +182,15 @@ const MyComponent = () => {
 
 #### BridgeProvider
 
-This is a Provider component for bridging multiple react roots
+This is a Provider component for bridging multiple react roots.
+
+#### Context
+
+The special context created by createContext hook.
+
+#### Provider
+
+The provider you need to use to apply the context.
 
 ##### Parameters
 
@@ -221,7 +229,7 @@ const App = () => {
 
 #### useBridgeValue
 
-This hook return a value for BridgeProvider
+This hook return a value for BridgeProvider.
 
 ## Limitations
 

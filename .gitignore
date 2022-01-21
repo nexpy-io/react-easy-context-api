@@ -179,3 +179,5 @@ sketch
 !.vscode/*.code-snippets
 
 # End of https://www.toptal.com/developers/gitignore/api/node,git,visualstudiocode,react
+
+src/native
