@@ -42,7 +42,7 @@ const CatsPetted = () => {
   return (
     <div>
       <p>Petted cats: {catsPettedNumber}</p>
-      <button onClick={() => setter(state => state + 1)}>Add one</button>
+      <button onClick={() => setter(prevState => prevState + 1)}>Add one</button>
     </div>
   )
 }
@@ -54,7 +54,7 @@ const CurrentCats = () => {
   return (
     <div>
       <p>Current cats: {currentCatsNumber}</p>
-      <button onClick={() => setter(state => state + 1)}>Add one</button>
+      <button onClick={() => setter(prevState => prevState + 1)}>Add one</button>
     </div>
   )
 }
