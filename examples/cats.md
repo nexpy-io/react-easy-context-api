@@ -1,3 +1,5 @@
+# Cats Example
+
 ```tsx
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -6,14 +8,14 @@ import { useState, FC, Dispatch, SetStateAction } from 'react'
 
 import { createContext } from '@nexpy/react-easy-context-api'
 
-type MyContext = {
+type CatsContextType = {
   pettedCats: number
   currentCats: number
   setPettedCats: Dispatch<SetStateAction<number>>
   setCurrentCats: Dispatch<SetStateAction<number>>
 }
 
-const { useSelector, Provider } = createContext<MyContext>({} as MyContext)
+const CatsContext = createContext<CatsContextType>({} as CatsContextType)
 
 const CatsProvider: FC = ({ children }) => {
   const [pettedCats, setPettedCats] = useState(0)
@@ -22,7 +24,7 @@ const CatsProvider: FC = ({ children }) => {
   // ... your context logic :)
 
   return (
-    <Provider
+    <CatsContext.Provider
       value={{
         pettedCats,
         currentCats,
@@ -31,13 +33,13 @@ const CatsProvider: FC = ({ children }) => {
       }}
     >
       {children}
-    </Provider>
+    </CatsContext.Provider>
   )
 }
 
 const CatsPetted = () => {
-  const catsPettedNumber = useSelector(state => state.pettedCats)
-  const setter = useSelector(state => state.setPettedCats)
+  const catsPettedNumber = CatsContext.useSelector(state => state.pettedCats)
+  const setter = CatsContext.useSelector(state => state.setPettedCats)
 
   return (
     <div>
@@ -48,8 +50,8 @@ const CatsPetted = () => {
 }
 
 const CurrentCats = () => {
-  const currentCatsNumber = useSelector(state => state.currentCats)
-  const setter = useSelector(state => state.setCurrentCats)
+  const currentCatsNumber = CatsContext.useSelector(state => state.currentCats)
+  const setter = CatsContext.useSelector(state => state.setCurrentCats)
 
   return (
     <div>

@@ -56,7 +56,7 @@ type MyContext = {
   currentCats: number
 }
 
-const { useSelector, Provider } = createContext<MyContext>({
+const CatsContext = createContext<MyContext>({
   pettedCats: 0,
   currentCats: 0,
 })
@@ -68,28 +68,28 @@ const CatsProvider: FC = ({ children }) => {
   // ... your context logic :)
 
   return (
-    <Provider
+    <CatsContext.Provider
       value={{
         pettedCats,
         currentCats,
       }}
     >
       {children}
-    </Provider>
+    </CatsContext.Provider>
   )
 }
 
-export { CatsProvider, useSelector }
+export { CatsContext, CatsProvider }
 
 // ... in your components
 const CatsPetted = () => {
-  const catsPettedNumber = useSelector(state => state.pettedCats)
+  const catsPettedNumber = CatsContext.useSelector(state => state.pettedCats)
 
   return <p>Petted cats: {catsPettedNumber}</p>
 }
 
 const CurrentCats = () => {
-  const currentCatsNumber = useSelector(state => state.currentCats)
+  const currentCatsNumber = CatsContext.useSelector(state => state.currentCats)
 
   return <p>Current cats: {currentCatsNumber}</p>
 }
