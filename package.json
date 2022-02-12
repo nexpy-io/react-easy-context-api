@@ -15,7 +15,6 @@
   "module": "./dist/index.js",
   "react-native": "./dist/index.native.js",
   "types": "./dist/index.d.ts",
-  "dependencies": {},
   "scripts": {
     "husky:install": "husky install",
     "precompile:native": ". automation/precompile-native.sh",
@@ -88,5 +87,16 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nexpy-io/react-easy-context-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nexpy-io/react-easy-context-api/issues"
+  },
+  "homepage": "https://github.com/nexpy-io/react-easy-context-api#readme"
 }
