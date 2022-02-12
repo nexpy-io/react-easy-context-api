@@ -1,5 +1,5 @@
 {
-  "name": "react-easy-context-api",
+  "name": "@nexpy/react-easy-context-api",
   "description": "A simple way to create, consume and manipulate contexts from react context API.",
   "keywords": [
     "context-api",

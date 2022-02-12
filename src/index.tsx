@@ -19,7 +19,7 @@ type ProviderProps<Value> = PropsWithChildren<{
  * @param defaultValue Value
  *
  * @example
- * import { createContext } from 'react-easy-context-api'
+ * import { createContext } from '@nexpy/react-easy-context-api'
  *
  * type PersonContext = {
  *   firstName: string

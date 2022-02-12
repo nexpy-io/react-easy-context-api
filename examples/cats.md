@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 // cats-context.tsx
 import { useState, FC, Dispatch, SetStateAction } from 'react'
 
-import { createContext } from 'react-easy-context-api'
+import { createContext } from '@nexpy/react-easy-context-api'
 
 type MyContext = {
   pettedCats: number

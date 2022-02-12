@@ -1,4 +1,4 @@
-# react-easy-context-api
+# @nexpy/react-easy-context-api
 
 [![npm](https://img.shields.io/npm/v/react-easy-context-api)](https://www.npmjs.com/package/react-easy-context-api)
 [![size](https://img.shields.io/bundlephobia/minzip/react-easy-context-api)](https://bundlephobia.com/result?p=react-easy-context-api)
