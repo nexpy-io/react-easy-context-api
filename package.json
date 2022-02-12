@@ -8,7 +8,7 @@
     "context",
     "hooks"
   ],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "author": "AllanOliveiraM",
   "main": "./dist/index.js",
@@ -19,6 +19,7 @@
     "husky:install": "husky install",
     "precompile:native": ". automation/precompile-native.sh",
     "build": "yarn --silent precompile:native && rollup -c",
+    "build:complete": "rm -rf ./dist && yarn precompile:native && yarn build",
     "start": "yarn --silent precompile:native && rollup -c -w",
     "commit": "npx git-cz",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",

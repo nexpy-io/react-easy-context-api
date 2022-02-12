@@ -41,6 +41,8 @@ To make it work like original React context, it uses
 It also requires `useContextUpdate` to behave better in Concurrent Mode.
 (You don't need to use it in Legacy Mode.)
 
+<br />
+
 ## Usage
 
 ```tsx
@@ -100,15 +102,19 @@ const App = () => (
 )
 ```
 
+---
+
 ## API
 
-### createContext
+<br />
+
+### **`createContext`**
 
 This creates a special context.
 
 #### Parameters
 
-- `defaultValue` **Value**
+- `defaultValue`: **Value**
 
 #### Examples
 
@@ -123,9 +129,13 @@ type PersonContext = {
 const PersonContext = createContext<PersonContext>({ firstName: '', familyName: '' })
 ```
 
-### Returns:
+<br />
 
-#### useSelector
+### **createContext Returns:**
+
+<br />
+
+#### `useSelector`
 
 This hook returns context selected value by selector.
 
@@ -135,7 +145,7 @@ The selector should return referentially equal result for same input for better 
 
 ##### Parameters
 
-- `selector` **function (value: Value): Selected**
+- `selector`: **function (value: Value): Selected**
 
 ##### Examples
 
@@ -147,7 +157,9 @@ const MyComponent = () => {
 }
 ```
 
-#### useContext
+<br />
+
+#### `useContext`
 
 This hook returns the entire context value.
 Use this instead of React.useContext for consistent behavior.
@@ -161,7 +173,9 @@ const MyComponent = () => {
 }
 ```
 
-#### useContextUpdate
+<br />
+
+#### `useContextUpdate`
 
 This hook returns an update function that accepts a thunk function.
 
@@ -180,17 +194,43 @@ const MyComponent = () => {
 }
 ```
 
-#### BridgeProvider
+<br />
 
-This is a Provider component for bridging multiple react roots.
-
-#### Context
-
-The special context created by createContext hook.
-
-#### Provider
+#### `Provider`
 
 The provider you need to use to apply the context.
+
+---
+
+<br />
+
+### **Exotic Returns:**
+
+You probably won't need the following features. Use only if you know what you are doing.
+
+<br />
+
+#### `Context`
+
+The special context created by createContext hook. This context should not be consumed by the ro react `useContext` API, but by `useSpecialContext` bellow.
+
+<br />
+
+#### `useSpecialContext`
+
+This Hook is used to manually consume the same special context `Context` created by `createContext` function. This is not necessary as there is a level of abstraction on top of that and this hook should only be used with contexts created by the library. This utility is only available so there are no limitations on the use of this library.
+
+<br />
+
+#### `useBridgeValue`
+
+This hook return a value for BridgeProvider.
+
+<br />
+
+#### `BridgeProvider`
+
+This is a Provider component for bridging multiple react roots.
 
 ##### Parameters
 
@@ -227,9 +267,7 @@ const App = () => {
 }
 ```
 
-#### useBridgeValue
-
-This hook return a value for BridgeProvider.
+---
 
 ## Limitations
 
