@@ -1,7 +1,7 @@
 # @nexpy/react-easy-context-api
 
-[![npm](https://img.shields.io/npm/v/react-easy-context-api)](https://www.npmjs.com/package/react-easy-context-api)
-[![size](https://img.shields.io/bundlephobia/minzip/react-easy-context-api)](https://bundlephobia.com/result?p=react-easy-context-api)
+[![npm](https://img.shields.io/npm/v/@nexpy/react-easy-context-api)](https://www.npmjs.com/package/@nexpy/react-easy-context-api)
+[![size](https://img.shields.io/bundlephobia/minzip/@nexpy/react-easy-context-api)](https://bundlephobia.com/result?p=@nexpy/react-easy-context-api)
 
 ## Introduction
 
@@ -26,7 +26,7 @@ This package is constructed above the [use-context-selector](https://github.com/
 This package requires some peer dependencies, which you need to install by yourself.
 
 ```bash
-yarn add react-easy-context-api scheduler
+yarn add @nexpy/react-easy-context-api scheduler
 ```
 
 Notes for library authors:
@@ -47,7 +47,7 @@ It also requires `useContextUpdate` to behave better in Concurrent Mode.
 // cats-context.tsx
 import { useState, FC } from 'react'
 
-import { createContext } from 'react-easy-context-api'
+import { createContext } from '@nexpy/react-easy-context-api'
 
 type MyContext = {
   pettedCats: number
@@ -113,7 +113,7 @@ This creates a special context.
 #### Examples
 
 ```ts
-import { createContext } from 'react-easy-context-api'
+import { createContext } from '@nexpy/react-easy-context-api'
 
 type PersonContext = {
   firstName: string
@@ -202,7 +202,7 @@ The provider you need to use to apply the context.
 ##### Examples
 
 ```tsx
-import { createContext } from 'react-easy-context-api'
+import { createContext } from '@nexpy/react-easy-context-api'
 
 type PersonContext = {
   firstName: string
